@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container my-3">
+
+    <form method="post" action="{% url 'crawling:crawling' %}">
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <label for="search">검색어</label>
+            <input type="text" class="form-control" name="search" id="search"
+                   value="{{ form.search.value|default_if_none:'' }}">
+        </div>
+
+        <div class="mb-3">
+            <label for="start_p">시작 페이지</label>
+            <input type="text" class="form-control" name="start_p" id="start_p"
+                   value="{{ form.start_p.value|default_if_none:'' }}">
+        </div>
+
+        <div class="mb-3">
+            <label for="end_p">검색어</label>
+            <input type="text" class="form-control" name="end_p" id="end_p"
+                   value="{{ form.end_p.value|default_if_none:'' }}">
+        </div>
+
+        <button type="submit" class="btn btn-primary">클릭</button>
+
+    </form>
+
+</div>
+{% endblock %}

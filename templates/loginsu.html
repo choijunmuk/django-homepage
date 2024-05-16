@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% if user.is_authenticated %}
+
+    <script>
+
+        alert("로그인 성공");
+
+    </script>
+
+{% endif %}
+
+{% endblock %}

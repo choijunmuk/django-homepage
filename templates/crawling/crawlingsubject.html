@@ -1,0 +1,38 @@
+{% block content %}
+{% include "crawling/crawling.html" %}
+<style>
+    table-dark {
+        text-align: center;
+    }
+</style>
+
+    <div class="container my-3">
+
+        <table class="table text-center">
+        <thead>
+        <tr class="table-dark">
+            <th width="100">번호</th>
+            <th width="1000">제목</th>
+            <th width="500">링크</th>
+        </tr>
+        </thead>
+        <tbody>
+                {% if crawlingsubject_list %}
+        {% for crawlingsubject in crawlingsubject_list %}
+            <tr class="text-center">
+
+                <td>{{ crawlingsubject.num }}</td>
+
+                <td>{{ crawlingsubject.subject }}</td>
+
+                <td>{{ crawlingsubject.ref }}</td>
+
+            </tr>
+        {% endfor %}
+        {% endif %}
+
+        </tb
+        </tbody>
+        </table>
+    </div>
+{% endblock %}

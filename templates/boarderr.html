@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% if not user.is_authenticated %}
+
+    <script>
+
+        alert("먼저 로그인이나 회원 가입부터");
+
+    </script>
+
+{% endif %}
+
+{% endblock %}
